@@ -1,0 +1,349 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Resume</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(to bottom,#021024,#0b2545,#021024);
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.bubbles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.bubbles span{
+    position:absolute;
+    bottom:-150px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    animation:float 20s linear infinite;
+}
+
+.bubbles span:nth-child(1){
+    left:10%;
+    width:60px;
+    height:60px;
+    animation-duration:15s;
+}
+
+.bubbles span:nth-child(2){
+    left:25%;
+    width:80px;
+    height:80px;
+    animation-duration:18s;
+}
+
+.bubbles span:nth-child(3){
+    left:40%;
+    width:40px;
+    height:40px;
+    animation-duration:12s;
+}
+
+.bubbles span:nth-child(4){
+    left:60%;
+    width:100px;
+    height:100px;
+    animation-duration:20s;
+}
+
+.bubbles span:nth-child(5){
+    left:75%;
+    width:70px;
+    height:70px;
+    animation-duration:16s;
+}
+
+.bubbles span:nth-child(6){
+    left:90%;
+    width:50px;
+    height:50px;
+    animation-duration:14s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+        opacity:0;
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+header{
+    padding:20px 8%;
+}
+
+.page-title{
+    text-align:center;
+    font-size:3rem;
+    font-weight:bold;
+    margin-bottom:20px;
+    letter-spacing:3px;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:40px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:1.3rem;
+    font-weight:bold;
+}
+
+.nav-links a:hover{
+    color:#6cc6ff;
+}
+
+.hamburger{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+}
+
+.hamburger span{
+    width:30px;
+    height:4px;
+    background:white;
+    margin:4px;
+}
+
+.resume-section{
+    padding:40px 10%;
+}
+
+.profile-container{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.profile-pic{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+}
+
+.resume-box{
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
+    background:rgba(255,255,255,0.08);
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+.resume-content{
+    flex:1;
+}
+
+.resume-content h2{
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+.resume-content p,
+.resume-content li{
+    font-size:1.4rem;
+    line-height:1.8;
+}
+
+.resume-content ul{
+    margin-left:30px;
+}
+
+.resume-content strong{
+    font-size:1.8rem;
+}
+
+.dnsc{
+    width:280px;
+    border-radius:15px;
+}
+
+@media(max-width:768px){
+
+    .hamburger{
+        display:flex;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:120px;
+        right:0;
+        width:100%;
+        background:#0b2545;
+        flex-direction:column;
+        align-items:center;
+        padding:20px;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .resume-box{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .dnsc{
+        width:220px;
+    }
+
+    .page-title{
+        font-size:2.2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bubbles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<header>
+
+<div class="page-title">MY RESUME</div>
+
+<nav>
+
+<div class="logo">Portfolio</div>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Home</a></li>
+<li><a href="Resume.html">Resume</a></li>
+<li><a href="Projects.html">Projects/Work</a></li>
+<li><a href="Contact.html">Contact</a></li>
+</ul>
+
+<div class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</nav>
+
+</header>
+
+<section class="resume-section">
+
+<div class="profile-container">
+<img src="GAMENG2.jpg" alt="GAMENG2" class="profile-pic">
+</div>
+
+<div class="resume-box">
+
+<div class="resume-content">
+
+<p><strong>CONTACT INFO:</strong></p>
+<p>Lian Henri A. Gameng</p>
+<p>gameng.lianhenri@dnsc.edu.ph</p>
+
+<br>
+
+<p><strong>OBJECTIVE STATEMENT:</strong></p>
+<p>
+“To build a career in Information Technology where I can apply my technical skills in software development, networking, and cybersecurity to contribute to innovative projects.”
+</p>
+
+<br>
+
+<p><strong>EDUCATION:</strong></p>
+<ul>
+<li>Currently enrolled in BSIT program</li>
+<li>Davao del Norte State College</li>
+<li>Freshman (A.Y. 2025-2026)</li>
+</ul>
+
+<br>
+
+<p><strong>SKILLS:</strong></p>
+<ul>
+<li>Programming: Java</li>
+<li>Web Development: HTML and CSS</li>
+<li>IT Knowledge: Programming, OOP and JFrame</li>
+</ul>
+
+<br>
+
+<p><strong>EXPERIENCE:</strong></p>
+<ul>
+<li>Senior High School website making</li>
+<li>College coding practices</li>
+<li>College computing exercises</li>
+<li>College program making</li>
+<li>College website making</li>
+</ul>
+
+</div>
+
+<img src="DNSC.jpg" alt="DNSC" class="dnsc">
+
+</div>
+
+</section>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
+```
