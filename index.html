@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lian Henri A. Gameng</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    background:linear-gradient(to bottom,#020111,#0b1d3a,#000);
+    color:white;
+}
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:shooting linear infinite;
+}
+
+.star:nth-child(1){top:10%;left:-10%;animation-duration:4s;}
+.star:nth-child(2){top:20%;left:-15%;animation-duration:6s;}
+.star:nth-child(3){top:35%;left:-10%;animation-duration:5s;}
+.star:nth-child(4){top:50%;left:-20%;animation-duration:7s;}
+.star:nth-child(5){top:70%;left:-15%;animation-duration:6s;}
+.star:nth-child(6){top:15%;left:-10%;animation-duration:8s;}
+.star:nth-child(7){top:40%;left:-10%;animation-duration:5s;}
+.star:nth-child(8){top:80%;left:-10%;animation-duration:7s;}
+
+@keyframes shooting{
+    from{
+        transform:translateX(0) translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateX(1400px) translateY(500px);
+        opacity:0;
+    }
+}
+
+header{
+    width:100%;
+    padding:20px 8%;
+}
+
+.tagline{
+    text-align:center;
+    font-size:1.8rem;
+    font-weight:bold;
+    margin-bottom:20px;
+    letter-spacing:2px;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:1.3rem;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#66ccff;
+}
+
+.hamburger{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+}
+
+.hamburger span{
+    width:30px;
+    height:4px;
+    background:white;
+    margin:4px;
+    border-radius:5px;
+}
+
+.hero{
+    min-height:75vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.profile-pic{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+    box-shadow:0 0 30px rgba(255,255,255,0.5);
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.7rem;
+    max-width:900px;
+}
+
+@media (max-width: 768px){
+
+    .hamburger{
+        display:flex;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:120px;
+        right:0;
+        width:100%;
+        background:#081224;
+        flex-direction:column;
+        align-items:center;
+        padding:20px 0;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .hero p{
+        font-size:1.3rem;
+    }
+
+    .profile-pic{
+        width:220px;
+        height:220px;
+    }
+
+    .tagline{
+        font-size:1.3rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+</div>
+
+<header>
+
+    <div class="tagline">
+        Turning Ideas into IT Solutions
+    </div>
+
+    <nav>
+
+        <div class="logo">Portfolio</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Resume.html">Resume</a></li>
+            <li><a href="Projects.html">Projects/Work</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <img src="GAMENG.jpg" alt="GAMENG" class="profile-pic">
+
+    <h1>Lian Henri A. Gameng</h1>
+
+    <p>
+        Aspiring Software Developer | Passionate about Problem-Solving
+    </p>
+
+</section>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
